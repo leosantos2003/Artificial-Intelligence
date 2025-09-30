@@ -2,6 +2,8 @@
 
 ## 1. Linear Regression:
 
+* The first exercise consists of implementing the gradient descent algorithm for linear regression in Python 3. The goal is to predict farm prices using a fictitious dataset.
+
 A possible set of values ​​that converged to a minimum MSE (high-quality regression) was: {**b = 0, w = 0.1, alpha = 0.91, num_iterations = 100**}
 
 This resulted in a final MSE of 0.014802014531904436. Any changes to these values ​​either resulted in a larger MSE or did not significantly reduce the MSE value (we considered a significant change to be a change of up to 3 decimal places).
@@ -11,6 +13,8 @@ It is important to note that the results assume that the features (data) were no
 During testing, we noticed that the most significant parameter for achieving a good linear regression result was alpha, where small variations, both upward and downward, resulted in a drastic increase in the MSE value. (This implies that with even slightly lower values, the regression couldn't converge quickly enough, and that with slightly higher values, it ended up diverging.) Num_iterations was a distant second, since, at low values, the MSE value explodes quickly but stabilizes at a minimum after just over 30 iterations. The initial values ​​of b and w had almost no impact on the regression quality, implying that the linear regression algorithm is indeed very effective at finding good values ​​for these parameters considering the dataset to which they were applied, regardless of their initial values.
 
 ## 2. TensorFlow/Keras:
+
+* The second exercise focuses on evaluating neural networks for image classification using the TensorFlow/Keras library. The work is developed using a notebook.
 
 (Note 1: All values ​​found assume that pixel values ​​were normalized using the formula: pixel_value = pixel_value / 255)
 
