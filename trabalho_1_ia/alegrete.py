@@ -10,31 +10,25 @@ def compute_mse(b, w, data):
     :return: float - o erro quadratico medio
     """
 
-    """
-    # 1. Separamos as colunas em x e y
-    x = data[:, 0] # Primeira coluna (área do terreno)
-    y_real = data[:, 1] # Segunda coluna (preço real)
-    
-    # 2. Calculamos o preço previsto usando a equação da reta
-    y_previsto = (w * x) + b # Equação da reta: y=ax+b
-
-    # 3. Calculamos a diferença (erro) ao quadrado dos valores real e previsto
-    erro_quadrado = (y_real - y_previsto) ** 2
-
-    # 4. Calculamos a média dos erros
-    mse = np.mean(erro_quadrado)
-
-    return mse
-    """
-
+    # Obter valores mínimos e máximos para normalização
     minx = min(data[:,0])
     maxx = max(data[:,0])
     miny = min(data[:,1])
     maxy = max(data[:,1])
+
+    # Normalizar os dados (Min-Max Scaling)
+    # Normaliza 'x' (features)
     x = (data[:,0] - minx) / (maxx - minx)
-    predicoes = w*x +b
+
+    # Normaliza 'y' (valores reais)
     valor_real = (data[:,1] - miny) / (maxy - miny)
+
+    # Calcular as predições com os dados normalizados
+    predicoes = w*x +b
+
+    # Calcular o MSE usando os valores normalizados
     erro_quadratico_medio = np.mean((predicoes - valor_real)**2)
+
     return erro_quadratico_medio
 
 
@@ -48,33 +42,29 @@ def step_gradient(b, w, data, alpha):
     :return: float,float - os novos valores de b e w, respectivamente
     """
 
-    """
-    N = float(len(data))
-    x = data[:, 0]
-    y_real = data[:, 1]
-
-    y_previsto = (w * x) + b
-
-    erro = y_real - y_previsto
-
-    # 1. Calculamos os gradientes (derivadas parciais da função de custo MSE)
-    b_grad = -(2/N) * np.sum(erro)
-    w_grad = -(2/N) * np.sum(x * erro)
-
-    novo_b = b - (alpha * b_grad)
-    novo_w = w - (alpha * w_grad)
-
-    return novo_b, novo_w
-    """
+    # Obter valores mínimos e máximos para normalização
     minx = min(data[:,0])
     maxx = max(data[:,0])
     miny = min(data[:,1])
     maxy = max(data[:,1])
+
+    # Normalizar os dados (Min-Max Scaling)
     x = (data[:,0] - minx) / (maxx - minx)
     y = (data[:,1] - miny) / (maxy - miny)
+
+    # Calcular a predição (hipótese) com dados normalizados
     hx = w*x + b
-    novo_b = b - alpha*(np.mean(2*(hx - y)))
-    novo_w = w - alpha*(np.mean(2*x*(hx - y)))
+
+    # Calcular os gradientes (derivadas parciais da função de custo MSE)
+    # Gradiente em relação a 'b' (bias): d_cost/d_b = 2 * (hx - y)
+    b_grad = np.mean(2 * (hx - y))
+
+    # Gradiente em relação a 'w' (peso): d_cost/d_w = 2 * x * (hx - y)
+    w_grad = np.mean(2 * x * (hx - y))
+
+    # Atualizar os parâmetros usando a taxa de aprendizado
+    novo_b = b - (alpha * b_grad)
+    novo_w = w - (alpha * w_grad)
 
     return novo_b.item(), novo_w.item()
 
@@ -95,28 +85,23 @@ def fit(data, b, w, alpha, num_iterations):
     :return: list,list - uma lista com os b e outra com os w obtidos ao longo da execução
     """
 
-    """
-    # 1. Criamos listas para armazenar o histórico dos parâmetros
-    b_history = []
-    w_history = []
+    # Inicializa listas para armazenar o histórico dos parâmetros
+    # O tamanho é (num_iterations + 1) para incluir os valores iniciais
+    valores_b = [0 for _ in range(num_iterations + 1)]
+    valores_w = [0 for _ in range(num_iterations + 1)]
 
-    # 2. Loop de treinamento
-    for i in range(num_iterations):
-        # i. Executa um passo do gradiente descendente para obter os novos b e w
-        b, w = step_gradient(b, w, data, alpha)
-
-        # ii. Armazena os novos valores nas listas de histórico
-        b_history.append(b)
-        w_history.append(w)
-
-    return b_history, w_history
-    """
-    valores_b = [0 for _ in range(num_iterations+1)]
-    valores_w = [0 for _ in range(num_iterations+1)]
+    # Define os valores iniciais na posição 0
     valores_b[0] = b
     valores_w[0] = w
 
-    for i in range(1,num_iterations+1):
-        valores_b[i], valores_w[i] = step_gradient(valores_b[i-1], valores_w[i-1], data, alpha)
+    # Loop de treinamento
+    for i in range(1, num_iterations + 1):
+        # Calcula os novos b e w usando o passo do gradiente
+        # com os valores da iteração anterior (i-1)
+        b_novo, w_novo = step_gradient(valores_b[i - 1], valores_w[i - 1], data, alpha)
+
+        # Armazena os novos valores na posição atual (i)
+        valores_b[i] = b_novo
+        valores_w[i] = w_novo
 
     return valores_b, valores_w
