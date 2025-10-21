@@ -13,7 +13,17 @@ This repository documents the four Artificial Intelligence projects proposed dur
 * [Project 2](https://github.com/leosantos2003/Artificial-Intelligence/tree/main/trabalho_2_ia):
    * The project consists of implementing and testing Value Iteration and Q-Learning algorithms. We use the Gridworld, Crawler (robot), and Pacman environments.
    * Task 1: Value Iteration
-      * asdfvds
+      * We implement the ValueIterationAgent agent in the `valueIterationAgents.py` file.
+   * Task 2: Bridge Crossing Analysis
+      * In the `analysis.py` file, we change just one of the parameters (discount or noise) so that the agent decides to cross the bridge in BridgeGrid.
+   * Task 3: Q-Learning
+      * We implement the main QLearningAgent methods in the `qlearningAgents.py` file.
+   * Task 4: Epsilon Greedy
+      * We implement the getAction method in `qlearningAgents.py`.
+   * Task 5: Q-Learning and Pacman
+      * We run Pacman with the previews implementations.
+   * Task 6: Approximated Q-Learning
+      * We implement ApproximateQAgent (also in `qlearningAgents.py`).
 
 * Project 3:
 
