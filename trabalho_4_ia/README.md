@@ -1,6 +1,6 @@
 # T4 \- Artificial Intelligence: Adversarial Search
 
-*\*Agent:\*\* \`o\_cara\`
+* *\*Agent:\*\* \`o\_cara\`
 
 # 1\. Group Identification  
 Bernardo Fellini Oliveira \- 00323402 \- Turma B  
@@ -21,15 +21,15 @@ The implemented algorithm was Minimax with alpha-beta pruning and unlimited dept
 
 The results of the manual tests were:
 
-\*\*Does minimax always win or draw when playing against the \`randomplayer\`?\*\*
+* \*\*Does minimax always win or draw when playing against the \`randomplayer\`?\*\*
 
-\*\*\*Yes.\*\* In tests performed against the \`randomplayer\`, the agent \`o\_cara\` (playing with the optimal strategy) never lost. The result was a draw, proving that the agent plays in a way that avoids errors.
+* \*\*\*Yes.\*\* In tests performed against the \`randomplayer\`, the agent \`o\_cara\` (playing with the optimal strategy) never lost. The result was a draw, proving that the agent plays in a way that avoids errors.
 
-\*\*Does minimax always break even?\*\*  
-\* \*\*Yes.\*\* When executing \`o\_cara\` (Blacks) against \`o\_cara\` (Whites), the result of the game was a draw. This indicates that both players are playing the optimal strategy, and the game ends with the board full without either player being forced to lose.
+* \*\*Does minimax always break even?\*\*  
+* \* \*\*Yes.\*\* When executing \`o\_cara\` (Blacks) against \`o\_cara\` (Whites), the result of the game was a draw. This indicates that both players are playing the optimal strategy, and the game ends with the board full without either player being forced to lose.
 
-\*\*Does minimax not lose to you when you use your best strategy?\*\*  
-\* \*\*Yes.\*\* The agent never lost to a human player. In the tests, there were two results:  
+* \*\*Does minimax not lose to you when you use your best strategy?\*\*  
+* \* \*\*Yes.\*\* The agent never lost to a human player. In the tests, there were two results:  
         1\.  The human player made a mistake (aligning three pieces) and \*\*lost\*\* (the agent \`o\_cara\` won).  
         2\.  The human player played with the best strategy and the game ended in a \*\*draw\*\*.
 
