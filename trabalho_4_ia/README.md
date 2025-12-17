@@ -1,6 +1,6 @@
 # T4 \- Artificial Intelligence: Adversarial Search
 
-* *\*Agent:\*\* \`o\_cara\`
+* *Agent:* \`o\_cara\`
 
 # 1\. Group Identification  
 Bernardo Fellini Oliveira \- 00323402 \- Turma B  
