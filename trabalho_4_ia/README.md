@@ -1,11 +1,11 @@
 # T4 \- Artificial Intelligence: Adversarial Search
 
-* *Agent:* \`o\_cara\`
+* **Agent:** \`o\_cara\`
 
 # 1\. Group Identification  
-Bernardo Fellini Oliveira \- 00323402 \- Turma B  
-Vinícius Gross Castro \- 00324541 \- Turma B  
-Leonardo Rocha dos Santos	\- 00341831 \- Turma B
+* Bernardo Fellini Oliveira \- 00323402 \- Turma B  
+* Vinícius Gross Castro \- 00324541 \- Turma B  
+* Leonardo Rocha dos Santos	\- 00341831 \- Turma B
 
 # 2\. Additional Libraries
 
