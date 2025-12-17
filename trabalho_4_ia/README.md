@@ -1,19 +1,19 @@
-\# T4 \- Artificial Intelligence: Adversarial Search
+# T4 \- Artificial Intelligence: Adversarial Search
 
-\*\*Agent:\*\* \`o\_cara\`
+*\*Agent:\*\* \`o\_cara\`
 
-\#\# 1\. Group Identification  
+# 1\. Group Identification  
 Bernardo Fellini Oliveira \- 00323402 \- Turma B  
 Vinícius Gross Castro \- 00324541 \- Turma B  
 Leonardo Rocha dos Santos	\- 00341831 \- Turma B
 
-\#\#2\. Additional Libraries
+# 2\. Additional Libraries
 
 This work uses only standard Python 3 libraries (specifically `math` for `inf` in the minimax algorithm).
 
 No additional libraries are required for execution.
 
-\#\# 3\. Evaluation of Alpha-Beta Pruning (Tic-Tac-Toe Misere)
+# 3\. Evaluation of Alpha-Beta Pruning (Tic-Tac-Toe Misere)
 
 As requested in item "a" of section 2.2 of the statement, an evaluation was carried out of the performance of the agent that we chose to name \`o_cara\` in the Reverse Tic-Tac-Toe game.
 
@@ -35,7 +35,7 @@ The results of the manual tests were:
 
 \---
 
-\#\# 4\. Assessment and Implementation (Othello)
+# 4\. Assessment and Implementation (Othello)
 
 As requested in item “b” of section 2.2 of the statement, a tournament was held between the 3 Minimax algorithms with different heuristics being used by the agent ‘o\_cara’. Each algorithm faced each other twice, once playing first and once playing last.
 
